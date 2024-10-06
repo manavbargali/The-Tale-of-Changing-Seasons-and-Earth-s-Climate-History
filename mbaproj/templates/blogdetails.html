@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% load static %}
+{% block css %}
+<style>
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .blog-detail {
+        background-color: #fff;
+        padding: 80px 80px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .blog-detail .header h2 {
+        font-size: 2.5rem;
+        color: #2c3e50;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .blog-detail .header .meta {
+        font-size: 1rem;
+        color: #95a5a6;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .blog-detail .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .blog-detail .content .featured-img {
+        max-width: 50%;
+        height: auto;
+        border-radius: 8px;
+        margin-bottom: 20px;
+    }
+
+    .blog-detail .content .text {
+        font-size: 1.2rem;
+        line-height: 1.8;
+        color: #34495e;
+        text-align: justify;
+        margin: 20px 0;
+    }
+
+    @media (max-width: 768px) {
+        .blog-detail .header h2 {
+            font-size: 2rem;
+        }
+
+        .blog-detail .content .text {
+            font-size: 1rem;
+        }
+    }
+</style>
+{% endblock %}
+
+{% block innercontent %}
+<section class="blog-detail" id="blog">
+    <div class="container">
+        <div class="header">
+            <h2>{{ blog.title }}</h2>
+            <!-- <p class="meta">By {{ blog.author }} on {{ blog.created_at|date:"F j, Y" }}</p> -->
+            <p class="meta">Created on {{ blog.created_at|date:"F j, Y" }}</p>
+        </div>
+        <div class="content">
+            <img src="{{ blog.feature_img.url }}" alt="{{ blog.title }}" class="featured-img">
+            <div class="text">
+                {{ blog.content|safe }} <!-- Render full content -->
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="en">
+{% load static  %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The MBA Squad Climate Change</title>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <style>
+    {% block css %}
+
+
+{% endblock %}
+</style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo" >Climate Change</div>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/#blogs">Blogs</a></li>
+                <li><a href="/aboutUs">About Us</a></li>
+                <li><a href="/contactUs">Contact Us</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </div>
+    </nav>
+
+
+{% block innercontent %}
+{% endblock %}
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 MyWebsite. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="{% static 'js/index.js' %}"></script>
+</body>
+
+</html>

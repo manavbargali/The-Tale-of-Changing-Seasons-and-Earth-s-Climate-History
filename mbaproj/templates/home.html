@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+.hero {
+    background: url({% static 'images/hero3.webp' %}) no-repeat center center/cover;
+    color: #5fc165;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+{% endblock %}
+{% block innercontent %}
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1 style="font-size: 500%;">Welcome to the Climate Story</h1>
+            <p style="font-size: 250%;">Find the latest Data about the climate.</p>
+            <!-- <button>Read More</button> -->
+        </div>
+    </section>
+    <section class="blog-categories" id="blogs">
+        <div class="container">
+            <h2 style="font-size: 350%;">Climate Timeline</h2>
+            <div class="category-box">
+                {% for category in categories %}
+                    {% if category.slug %} <style>
+                        .category-item a {
+    text-decoration: none;
+}
+.category-item h3 {
+    margin: 10px;
+    font-size: 1.5rem;
+    color: #ffffff;
+    text-align: center;
+}
+
+
+                    </style>
+                    
+                        <div class="category-item">
+                            <a href="{% url 'category_blogs' category.slug %}">
+                                <img src="{{ category.image.url }}" alt="{{ category.name }}">
+                                <h3>{{ category.name }}</h3>
+                            </a>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+ 
+    
+
+{% endblock %}

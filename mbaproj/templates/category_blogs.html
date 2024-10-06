@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block innercontent %}
+<section class="blog-categories" id="blogs">
+    <div class="container">
+        <h2 style="font-size: 350%;">{{ category.name }}</h2> <!-- Display the name of the category -->
+        <style>
+            .category-item {
+    margin: 10px;
+    color: #ffffff;
+    text-align: center;
+    background-color: #333; /* Example background color */
+    padding: 15px;
+    border-radius: 8px;
+    width: 100%;  /* Ensure boxes take up the full width of their container */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    display: flex;
+    flex-direction: column; /* Align children vertically */
+    align-items: center; /* Center children horizontally */
+    justify-content: space-between; /* Distribute extra space evenly */
+    height: 500px; /* Set a fixed height for uniformity */
+}
+
+.category-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px; /* Add space between image and text */
+}
+
+.blog-title, .blog-content {
+    font-family: Arial, sans-serif; /* Specify font family */
+    color: #ffcc00; /* Example font color */
+    margin: 5px 0;
+}
+
+.read-more {
+    display: inline-block;
+    font-family: Arial, sans-serif; /* Specify font family */
+    font-size: 1rem; /* Font size */
+    color: #00ccff; /* Example font color */
+    text-decoration: underline;
+    cursor: pointer;
+    margin-top: auto; /* Push read more to the bottom */
+}
+
+a:hover .read-more {
+    color: #0099cc; /* Change color on hover */
+}
+
+.category-item p {
+    word-wrap: break-word;
+}
+/* height: 300px; Set a fixed height for uniformity */
+
+
+        </style>
+        <div class="category-box">
+            {% for blog in blogs %}
+            <a href="{% url 'blog_detail' blog.id %}" style="text-decoration: none;">
+                <div class="category-item">
+                    <img src="{{ blog.feature_img.url }}" alt="{{ blog.category.name}}">
+                    <h3 class="blog-title">{{ blog.title | truncatewords:5 }}</h3>
+                    <p class="blog-content">{{ blog.content|safe|truncatewords:8 }}</p>
+                    <span class="read-more">Read more</span>
+                </div>
+            </a>
+        {% empty %}
+            <p>No blogs available in this category.</p>
+        {% endfor %}
+        
+        
+        </div>
+    </div>
+</section>
+
+
+
+
+{% endblock %}

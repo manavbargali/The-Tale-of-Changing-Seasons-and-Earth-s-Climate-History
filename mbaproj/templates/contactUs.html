@@ -1,0 +1,142 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+<style>
+    .about-us {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f7f7f7;
+        color: #333;
+    }
+
+    .container-data {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .about-us h1 {
+        text-align: center;
+        font-size: 3rem;
+        color: #3498db;
+        /* Change this to your preferred color */
+        margin-bottom: 20px;
+    }
+
+    .about-us h2 {
+        font-size: 2rem;
+        color: #2ecc71;
+        /* Change this to your preferred color */
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    .about-us h3 {
+        font-size: 1.5rem;
+        color: #e74c3c;
+        /* Change this to your preferred color */
+        margin-bottom: 10px;
+    }
+
+    .about-us p {
+        font-size: 1.2rem;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+
+    .team-member {
+        background-color: #fff;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .team-member a {
+        color: #3498db;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .team-member a:hover {
+        text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+        .about-us h1 {
+            font-size: 2.5rem;
+        }
+
+        .about-us h2 {
+            font-size: 1.5rem;
+        }
+
+        .about-us h3 {
+            font-size: 1.2rem;
+        }
+
+        .about-us p {
+            font-size: 1rem;
+        }
+    }
+</style>
+{% endblock %}
+{% block innercontent %}
+
+
+
+<section class="about-us">
+    <div class="container-data">
+        <h1>Contact Us</h1>
+        <p>Welcome to our team page! We are a dynamic and diverse group of MBA students united by a common goal: to
+            create innovative solutions for the NASA Space Apps Challenge 2024.</p>
+        <h2>Meet Our Team</h2>
+        <div class="team-member">
+            <h3>Divyanshu Mehrotra</h3>
+            <p>An MBA student with a background in Bachelor of Pharmacy, bringing strong analytical skills,
+                scientific research experience, and a knack for digital productivity. As a former Education Officer,
+                Divyanshu excels in preparing presentations, conducting workshops, and managing assessments.</p>
+            <p><a
+                    href="https://www.linkedin.com/in/divyanshu-mehrotra?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">LinkedIn
+                    Profile</a></p>
+        </div>
+        <div class="team-member">
+            <h3>Jeevan Pandey</h3>
+            <p>An MBA student with a Bachelor of Pharmacy degree, passionate about health sciences and environmental
+                sustainability. Jeevan brings a wealth of knowledge in scientific research and a meticulous approach
+                to problem-solving.</p>
+            <p><a href="https://in.linkedin.com/in/jeevan-pandey-0432b2217">LinkedIn Profile</a></p>
+        </div>
+        <div class="team-member">
+            <h3>Devansh Sah</h3>
+            <p>An MBA student with a degree in Hotel Management, possessing exceptional organizational skills and a
+                talent for hospitality and event management. Devansh is adept at coordinating logistics and ensuring
+                smooth operations, making them an invaluable asset to the team.</p>
+            <p><a
+                    href="https://www.linkedin.com/in/devansh-sah-a517b1219?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">LinkedIn
+                    Profile</a></p>
+        </div>
+        <div class="team-member">
+            <h3>Manav Bargali</h3>
+            <p>An MBA student with a B.Com degree, specializing in financial management, budgeting, and business
+                strategy. Manav is efficient in designing web pages and provides critical insights into the
+                financial aspects of our projects, ensuring that our solutions are not only innovative but also
+                economically viable.</p>
+            <p><a
+                    href="https://www.linkedin.com/in/manav-bargali-55a1b0219?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">LinkedIn
+                    Profile</a></p>
+        </div>
+        <h2>Contact Us</h2>
+        <p>If you have any questions, suggestions, or opportunities for collaboration, we would love to hear from
+            you. Please feel free to reach out to any of our team members through their LinkedIn profiles or contact
+            us at info@climatechangeinsights.com.</p>
+    </div>
+</section>
+
+
+
+
+
+{% endblock %}

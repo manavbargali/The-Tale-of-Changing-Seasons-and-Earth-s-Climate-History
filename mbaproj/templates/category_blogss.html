@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+
+{% endblock %}
+{% block innercontent %}
+<section class="blog-categories" id="blogs">
+    <div class="container">
+        <h2 style="font-size: 350%;">{{ category.name }}</h2>
+        <div class="category-box">
+            {% for blog in blogs %}
+            {% if category.slug %} <style>
+                .category-item a {
+                    text-decoration: none;
+                }
+
+                .category-item h3 {
+                    margin: 10px;
+                    font-size: 1.5rem;
+                    color: #ffffff;
+                    text-align: center;
+                }
+                .category-item p {
+                    margin: 10px;
+                    /* font-size: 1.5rem; */
+                    color: #ffffff;
+                    text-align: center;
+                }
+            </style>
+
+            <div class="category-item">
+                <a href="{% url 'blog_detail' blog.id %}">
+                    <img src="{{ blog.feature_img.url }}" alt="{{ blog.category.name}}">
+                    <h3 class="blog-title">{{ blog.title | truncatewords:5 }}</h3>
+                    <!-- <h3 class="blog-title">{{ blog.title }}</h3> -->
+                    <p class="blog-content">{{ blog.content|safe|truncatewords:8 }} Read More...</p>
+                </a>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+
+
+{% endblock %}
